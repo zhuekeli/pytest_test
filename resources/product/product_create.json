@@ -1,0 +1,18 @@
+{
+  "create_product_without_inventory": {
+    "brandName": "品牌名称",
+    "categoryId": 1,
+    "enabled": 1,
+    "image": [],
+    "model": "",
+    "name": "测试商品名称-1",
+    "purchasePrice": 120.3,
+    "recognitionImages": "h1ttp://xxx.ruigushop.com/",
+    "salePrice": 32,
+    "scanCode": "",
+    "scenarioIds": "",
+    "supplierId": 1,
+    "tags": [],
+    "unit": "商品单位"
+  }
+}

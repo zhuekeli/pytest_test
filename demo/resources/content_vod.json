@@ -1,0 +1,78 @@
+{
+  "upload_source_file_1": {
+    "type": "video",
+    "source_file_id": "5d5bc188e040f607dc40c739",
+    "language": "ENG"
+  },
+  "upload_source_file_2": {
+    "type": "video",
+    "source_file_id": "5d5bc188e040f607dc40c73a",
+    "language": "ENG"
+  },
+  "upload_source_file_err": {
+    "type": "err",
+    "source_file_id": "5d37ce623f1200b75041231b",
+    "language": "ENG"
+  },
+  "encode_default_source1": {
+    "source_file_id": "5d5bc188e040f607dc40c739"
+  },
+  "encode_default_err": {
+    "source_file_id": "5d37ce623f1200b11041231b"
+  },
+  "encode_set_source2": {
+    "source_file_id": "5d5bc188e040f607dc40c73a",
+    "proc_profile_name": [
+      "demovod720"
+    ],
+    "out_type": {
+      "hls_out": 0,
+      "dash_out": 0,
+      "mp4_out": true
+    }
+  },
+  "trans_coding_info_1": {
+    "library_id": [
+      "5d5bc188e040f607dc40c73b"
+    ]
+  },
+  "trans_coding_info_2": {
+    "library_id": [
+      "5d5bc189e040f607dc40c73c"
+    ]
+  },
+  "trans_coding_info_no": {
+    "library_id": [
+      "5d3a6ce39e0e15076c51dad2"
+    ]
+  },
+  "limit": {
+    "limit": 1
+  },
+  "next_id": {
+    "limit": 1,
+    "next": "eyIkb2lkIjoiNWQ1YmMxODllMDQwZjYwN2RjNDBjNzNjIn0"
+  },
+  "previous_id": {
+    "limit": 1,
+    "previous": "eyIkb2lkIjoiNWQ1YmMxODhlMDQwZjYwN2RjNDBjNzNiIn0"
+  },
+  "limit_1": {
+    "limit": 1
+  },
+  "next_id_1": {
+    "limit": 1,
+    "next": "eyIkb2lkIjoiNWQ1YmMxODhlMDQwZjYwN2RjNDBjNzNhIn0"
+  },
+  "previous_id_1": {
+    "limit": 1,
+    "previous": "eyIkb2lkIjoiNWQ1YmMxODhlMDQwZjYwN2RjNDBjNzM5In0"
+  },
+  "library_id_source2": "5d5bc189e040f607dc40c73c",
+  "source_file_1": "5d5bc188e040f607dc40c739",
+  "source_file_2": "5d5bc188e040f607dc40c73a",
+  "source_file_no": "5d3ac41341bfe358ce4054f1",
+  "library_id_1": "5d5bc188e040f607dc40c73b",
+  "library_id_2": "5d5bc189e040f607dc40c73c",
+  "library_id_no": "5d37cea23f1200b750412323"
+}

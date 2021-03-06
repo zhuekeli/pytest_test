@@ -1,0 +1,45 @@
+{
+  "create_order": {
+    "discountAmount": 0,
+    "memberDiscountAmount": 0,
+    "memberType": 0,
+    "orderSource": 0,
+    "paidType": 0,
+    "remark": "",
+    "totalPaidAmount": 345,
+    "items": [
+      {
+        "giftQuantity": 0,
+        "price": 100,
+        "prodCode": "500000043",
+        "prodName": "R5非居间商品006",
+        "quantity": 10,
+        "unit": ""
+      },
+      {
+        "giftQuantity": 0,
+        "price": 100,
+        "prodCode": "500000140",
+        "prodName": "R5非居间商品009",
+        "quantity": 12,
+        "unit": ""
+      },
+      {
+        "giftQuantity": 0,
+        "price": 45.3,
+        "prodCode": "500000042",
+        "prodName": "R5非居间商品005",
+        "quantity": 3,
+        "unit": ""
+      },
+      {
+        "giftQuantity": 0,
+        "price": 23,
+        "prodCode": "500000046",
+        "prodName": "喷嘴/AG60",
+        "quantity": 4,
+        "unit": ""
+      }
+    ]
+  }
+}

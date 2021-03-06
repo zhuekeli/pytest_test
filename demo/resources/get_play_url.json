@@ -1,0 +1,39 @@
+{
+  "get_play_token_hls": {
+    "user_id": "auto_end_user1",
+    "media_type": "VOD",
+    "media_id": "5d5bc188e040f607dc40c73b",
+    "delivery_type": 0,
+    "delivery_id": 0
+  },
+  "play_token_hls": {
+    "playback_token": "U2FsdGVkX1/R1MYLStZPfBIurB/oXZNzPF6H4y/3jnarM9nPsylhaco6yoDfDjHYt989IqfQ2SQ3xnoxKQXhl1x0BLQdISXKA2zxI/SfrMGSyUZmEhIkvnPPdn3HYn+ZMHfxGrA7eW1XNhfQLUHhFf7uNqxuW1nimrUH3gc0l+u2oC8CQMYqHcstM0Bg1zDk/1UP8KTe2K4Zide7EfQAxqwnh/gPkwvfA0cix0PfzhGCwQFVIORMjj8QFGSSkFWm9hGEwHs3ctdSZkDuCt+kgw/n8X9+t5OVCTsK0esfj28="
+  },
+  "get_play_token_mp4": {
+    "user_id": "auto_end_user1",
+    "media_type": "VOD",
+    "media_id": "5d5bc188e040f607dc40c73b",
+    "delivery_type": 1,
+    "delivery_id": 0
+  },
+  "play_token_mp4": {
+    "playback_token": "U2FsdGVkX19sXXXTnNPaO+2BpRqY80NGZBGHuTMp6n8rvhuqQ4F9/Dkq7UIHc0ekiutHlUsbYLv27lxNA0uz6rj8+6Z8H1RQiBlfp2q0c2Kbz1wwaOIfIZJVjVunkUtZvS8CVU/SpaBfk0fIAKMrLhOu7tI5EowwZNrMrY5/2kx+SyoY2EHtCQcuBOtjGr/Tx3lPmTLZDM2tulBLWbUzVEpqdc/RVp29vAgsVP0KMcTh1u2yqjGo6POiRJm1l9zPjzhjwedhYmTQzBDECRD/+N5pGckkvbLr2SxVafjqtYE="
+  },
+  "get_play_token_dash": {
+    "user_id": "auto_end_user1",
+    "media_type": "VOD",
+    "media_id": "5d5bc188e040f607dc40c73b",
+    "delivery_type": 2,
+    "delivery_id": 0
+  },
+  "play_token_dash": {
+    "playback_token": "U2FsdGVkX19rfl9WrS67yJmQQ3y1kJLb1LqR1YkdEBWzmZF7RnQRYBhjC1/oFkB2immdppZu9SdA4OaNlDowBfJpV0sD5IxPowBGo7HnVGbq8F6COowoVFEU5xuzLr7bXzbZ11K8tlqCBeEli3Cqk9V86wMqqJQzElB1FPb7cJfIMGUTp8gqMLWYVrGqJrtWV2uNxdOGMV1ZjzrWrMFHHAZfhH6O5ORhXvaKENqcqMElqoMHAiMKsanmmm/9lY8MUhyYF5ILMXUDM0KZS43dY8aTrfcYLZtm2OosoMlLV7E="
+  },
+  "get_play_token_no": {
+    "user_id": "auto_end_user1",
+    "media_type": "VOD",
+    "media_id": "5d414c211a10ce4931b178bc",
+    "delivery_type": 0,
+    "delivery_id": 0
+  }
+}
