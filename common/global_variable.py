@@ -11,9 +11,9 @@ def set_value(key, value):
 
 def get_value(key, def_value=None):
     """ 获得一个全局变量,不存在则返回默认值 """
-    if _global_dict is None:
-        return None
     try:
         return _global_dict[key]
     except KeyError:
         return def_value
+    except NameError:
+        return None

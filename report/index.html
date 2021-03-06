@@ -116,18 +116,18 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">弘机云商城 API测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> skoyi tester</p>
-<p class='attribute'><strong>开始时间 : </strong> 2021-03-06 14:52:22</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.000391</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 2，错误 2，通过率= 0.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2021-03-06 16:14:41</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.069915</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 2，通过 1，失败 1，通过率= 50.00%</p>
 
 <p class='description'>测试环境：Test</p>
 </div>
 
 
         <p id='show_detail_line'>
-        <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
-        <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-        <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+        <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 50.00% }</a>
+        <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
+        <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 1 }</a>
         <a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
         </p>
         <table id='result_table' class="table table-condensed table-bordered table-hover">
@@ -148,66 +148,44 @@ function html_escape(s) {
             <td>详细</td>
         </tr>
         
-        <tr class='errorClass warning'>
-            <td>unittest.loader._FailedTest</td>
-            <td class="text-center">2</td>
+        <tr class='passClass warning'>
+            <td>cashier.test_01_cashier.TestCashier</td>
+            <td class="text-center">1</td>
+            <td class="text-center">1</td>
             <td class="text-center">0</td>
             <td class="text-center">0</td>
-            <td class="text-center">2</td>
-            <td class="text-center"><a href="javascript:showClassDetail('c1',2)" class="detail" id='c1'>详细</a></td>
+            <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
         </tr>
     
-        <tr id='ft1_1' class='none'>
-            <td class='errorCase'><div class='testcase'>test_01_cashier</div></td>
-            <td colspan='5' align='center'>
-            <!--默认收起错误信息 -Findyou
-            <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
-            <div id='div_ft1_1' class="collapse">  -->
-            <!-- 默认展开错误信息 -Findyou -->
-            <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
-            <div id='div_ft1_1' class="collapse in" align="left">
-            <pre>
-            
-        ft1_1: ImportError: Failed to import test module: cashier.test_01_cashier
-Traceback (most recent call last):
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7/lib/python3.7/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7/lib/python3.7/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/abyss/workspace/skoyi/skoyi-test/case/cashier/test_01_cashier.py", line 5, in &lt;module&gt;
-    from common.httpSet import HttpMethod
-  File "/Users/abyss/workspace/skoyi/skoyi-test/common/httpSet.py", line 5, in &lt;module&gt;
-    from common.logger import Logger
-ModuleNotFoundError: No module named 'common.logger'
-
-
-        
-            </pre>
-            </div>
-            </td>
+        <tr id='pt1_1' class='hiddenRow'>
+            <td class='passCase'><div class='testcase'>test_01_cashier_not_customer</div></td>
+            <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
         </tr>
         
-        <tr id='ft1_2' class='none'>
-            <td class='errorCase'><div class='testcase'>test_01_product_create</div></td>
+        <tr class='failClass warning'>
+            <td>product.test_01_product_create.TestProductCreate</td>
+            <td class="text-center">1</td>
+            <td class="text-center">0</td>
+            <td class="text-center">1</td>
+            <td class="text-center">0</td>
+            <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
+        </tr>
+    
+        <tr id='ft2_1' class='none'>
+            <td class='failCase'><div class='testcase'>test_01_create_product_without_inventory</div></td>
             <td colspan='5' align='center'>
             <!--默认收起错误信息 -Findyou
-            <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
-            <div id='div_ft1_2' class="collapse">  -->
+            <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft2_1'>失败</button>
+            <div id='div_ft2_1' class="collapse">  -->
             <!-- 默认展开错误信息 -Findyou -->
-            <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
-            <div id='div_ft1_2' class="collapse in" align="left">
+            <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft2_1'>失败</button>
+            <div id='div_ft2_1' class="collapse in" align="left">
             <pre>
             
-        ft1_2: ImportError: Failed to import test module: product.test_01_product_create
-Traceback (most recent call last):
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7/lib/python3.7/unittest/loader.py", line 436, in _find_test_path
-    module = self._get_module_from_name(name)
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.7/lib/python3.7/unittest/loader.py", line 377, in _get_module_from_name
-    __import__(name)
-  File "/Users/abyss/workspace/skoyi/skoyi-test/case/product/test_01_product_create.py", line 5, in &lt;module&gt;
-    from common.logger import Logger
-ModuleNotFoundError: No module named 'common.logger'
-
+        ft2_1: Traceback (most recent call last):
+  File "/Users/abyss/workspace/skoyi/skoyi-test/case/product/test_01_product_create.py", line 36, in test_01_create_product_without_inventory
+    self.assertEqual(resp['code'], 200, '接口 code')
+AssertionError: 401 != 200 : 接口 code
 
         
             </pre>
@@ -218,10 +196,10 @@ ModuleNotFoundError: No module named 'common.logger'
         <tr id='total_row' class="text-center active">
             <td>总计</td>
             <td>2</td>
+            <td>1</td>
+            <td>1</td>
             <td>0</td>
-            <td>0</td>
-            <td>2</td>
-            <td>通过率：0.00%</td>
+            <td>通过率：50.00%</td>
         </tr>
         </table>
     

@@ -1,12 +1,8 @@
 import unittest
-from common.cal import Cal
-from common.logger import Logger
 
 
 class TestCal(unittest.TestCase):
     def setUp(self) -> None:
-        self.cal = Cal()
-        self.log = Logger()
         self.log.info("--------测试开始---------")
 
     def test_add(self):

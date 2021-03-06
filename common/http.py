@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 from common import global_variable
@@ -12,7 +14,7 @@ def get(url, param):
         token = load_config.get_token("token")
 
     req = requests.get(url, params=param, headers={"Authorization": token})
-    return req.text
+    return json.loads(req.text)
 
 
 def post(url, body):
@@ -21,4 +23,4 @@ def post(url, body):
         token = load_config.get_token('token')
 
     req = requests.post(url, json=body, headers={"Authorization": token})
-    return req.text
+    return json.loads(req.text)

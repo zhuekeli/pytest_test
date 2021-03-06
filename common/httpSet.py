@@ -2,7 +2,6 @@
 # coding=utf-8
 import json
 import requests
-from common.logger import Logger
 
 false = False
 true = True

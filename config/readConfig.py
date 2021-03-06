@@ -16,11 +16,11 @@ class ReadConfig:
         return self.cf.get(section, key)
 
     def get_token(self, name):
-        token_id = self.cf.get("TOKEN", name)
+        token_id = self.cf.get("BASE", name)
         return token_id
 
     def write_token(self, token_key, token):
-        self.cf.set("TOKEN", token_key, token)
+        self.cf.set("BASE", token_key, token)
         config = open(configPath, 'w')
         with config as conf:
             self.cf.write(conf)

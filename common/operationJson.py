@@ -23,7 +23,7 @@ class OperationJson:
             return data
             fp.close()
 
-    def key_get_data(self, key):
+    def get_data(self, key):
         """通过key值获取数据
         :param key: 需要获取的值对应的key
         :return:
@@ -51,6 +51,6 @@ class OperationJson:
 if __name__ == "__main__":
     file_name = "../resources/content_vod.json"
     a = OperationJson()
-    b = a.key_get_data("orc_token_header")
+    b = a.get_data("orc_token_header")
     print(type(b))
     print(b)

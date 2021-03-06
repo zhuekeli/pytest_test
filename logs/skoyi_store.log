@@ -1,3 +1,9 @@
-03-06 14:52 __main__     WARNING  ---------------All Test End---------------
-03-06 14:52 common.sendEmail INFO     邮件发送成功！
-03-06 14:52 __main__     WARNING  测试报告已发送电子邮件！
+03-06 16:14 cashier.test_01_cashier INFO     ----------测试开始----------
+03-06 16:14 cashier.test_01_cashier INFO     test_01_cashier
+03-06 16:14 cashier.test_01_cashier INFO     ----------测试结束----------
+03-06 16:14 product.test_01_product_create INFO     ----------测试开始----------
+03-06 16:14 product.test_01_product_create INFO     test_01_product_create
+03-06 16:14 product.test_01_product_create INFO     ----------测试结束----------
+03-06 16:14 __main__     WARNING  ---------------All Test End---------------
+03-06 16:14 common.sendEmail INFO     邮件发送成功！
+03-06 16:14 __main__     WARNING  测试报告已发送电子邮件！
