@@ -116,18 +116,18 @@ function html_escape(s) {
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">弘机云商城 API测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> skoyi tester</p>
-<p class='attribute'><strong>开始时间 : </strong> 2021-03-06 16:14:41</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:00.069915</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 2，通过 1，失败 1，通过率= 50.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2021-03-06 17:04:40</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:01.078196</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 2，通过 2，通过率= 100.00%</p>
 
 <p class='description'>测试环境：Test</p>
 </div>
 
 
         <p id='show_detail_line'>
-        <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 50.00% }</a>
-        <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
-        <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 1 }</a>
+        <a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
+        <a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+        <a class="btn btn-success" href='javascript:showCase(2)'>通过{ 2 }</a>
         <a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
         </p>
         <table id='result_table' class="table table-condensed table-bordered table-hover">
@@ -162,44 +162,27 @@ function html_escape(s) {
             <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
         </tr>
         
-        <tr class='failClass warning'>
+        <tr class='passClass warning'>
             <td>product.test_01_product_create.TestProductCreate</td>
             <td class="text-center">1</td>
-            <td class="text-center">0</td>
             <td class="text-center">1</td>
+            <td class="text-center">0</td>
             <td class="text-center">0</td>
             <td class="text-center"><a href="javascript:showClassDetail('c2',1)" class="detail" id='c2'>详细</a></td>
         </tr>
     
-        <tr id='ft2_1' class='none'>
-            <td class='failCase'><div class='testcase'>test_01_create_product_without_inventory</div></td>
-            <td colspan='5' align='center'>
-            <!--默认收起错误信息 -Findyou
-            <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft2_1'>失败</button>
-            <div id='div_ft2_1' class="collapse">  -->
-            <!-- 默认展开错误信息 -Findyou -->
-            <button id='btn_ft2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft2_1'>失败</button>
-            <div id='div_ft2_1' class="collapse in" align="left">
-            <pre>
-            
-        ft2_1: Traceback (most recent call last):
-  File "/Users/abyss/workspace/skoyi/skoyi-test/case/product/test_01_product_create.py", line 36, in test_01_create_product_without_inventory
-    self.assertEqual(resp['code'], 200, '接口 code')
-AssertionError: 401 != 200 : 接口 code
-
-        
-            </pre>
-            </div>
-            </td>
+        <tr id='pt2_1' class='hiddenRow'>
+            <td class='passCase'><div class='testcase'>test_01_create_product_without_inventory</div></td>
+            <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
         </tr>
         
         <tr id='total_row' class="text-center active">
             <td>总计</td>
             <td>2</td>
-            <td>1</td>
-            <td>1</td>
+            <td>2</td>
             <td>0</td>
-            <td>通过率：50.00%</td>
+            <td>0</td>
+            <td>通过率：100.00%</td>
         </tr>
         </table>
     

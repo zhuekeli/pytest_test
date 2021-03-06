@@ -6,7 +6,7 @@ pip install -r requirements.txt
 ```
 3. 运行脚本
 ```shell
-python -m unittest
+python run_case.py
 ```
 
 ## 项目依赖管理

@@ -5,16 +5,15 @@ import os
 import sys
 import unittest
 
-from common import global_variable
-from common.HTMLTestRunner import HTMLTestRunner
-from common.sendEmail import SendEmail
-from config.readConfig import ReadConfig
-from reset_env import ResetEnv
+from src.common import global_variable
+from src.common.HTMLTestRunner import HTMLTestRunner
+from src.common.send_email import SendEmail
+from src.config.readConfig import ReadConfig
+from src.common.reset_env import ResetEnv
 
 proDir = os.path.split(os.path.realpath(__file__))[0]
-test_case_path = os.path.join(proDir, "case")
+test_case_path = os.path.join(proDir, "src/case")
 logger = logging.getLogger(__name__)
-global_variable._init()
 
 
 class RunCase:
@@ -34,6 +33,7 @@ class RunCase:
         self.discover = unittest.defaultTestLoader.discover(test_case_path, pattern='test*.py', top_level_dir=None)
         # 重置测试环境
         self.is_env = self.env.clean_all()
+        self.env.init_data()
 
     def run_test(self):
         """执行测试"""
@@ -71,5 +71,7 @@ if __name__ == "__main__":
                         datefmt='%m-%d %H:%M',
                         filename='logs/skoyi_store.log',
                         filemode='w')
+    global_variable.init()
     run = RunCase()
+
     run.run_test()
