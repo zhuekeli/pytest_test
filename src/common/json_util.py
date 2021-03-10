@@ -18,7 +18,7 @@ class OperationJson:
         """打开json文件
         :return:返回json文件数据
         """
-        with open(self.file_name, 'r') as fp:
+        with open(self.file_name, 'r', encoding='UTF-8') as fp:
             data = json.load(fp)
             return data
             fp.close()

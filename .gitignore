@@ -3,3 +3,4 @@ report
 test-env
 .pytest_cache
 logs
+.idea
