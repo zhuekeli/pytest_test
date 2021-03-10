@@ -1,10 +1,11 @@
 ## 如何运行
 1. 安装 python
-2. 安装 相关依赖 
+2. 安装 python 相关依赖 
 ```shell
 pip install -r requirements.txt
 ```
-3. 运行脚本
+3. 安装 JDK、allure，allure 运行需要 JDK
+4. 运行脚本
 ```shell
 python run_case.py
 ```
