@@ -1,13 +1,21 @@
 {
   "create_product_without_inventory": {
     "brandName": "品牌名称",
-    "categoryId": 1,
     "enabled": 1,
     "image": [],
     "model": "",
     "name": "测试商品名称-",
-    "salePrice": 32,
-    "tags": [],
-    "unit": "商品单位"
+    "tags": []
+  },
+  "create_product_with_inventory": {
+    "brandName": "品牌名称",
+    "enabled": 1,
+    "image": [],
+    "model": "",
+    "name": "测试商品名称-",
+    "tags": [
+      "测试",
+      "自建"
+    ]
   }
 }

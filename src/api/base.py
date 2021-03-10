@@ -14,3 +14,10 @@ def random_price():
     随机价格
     """
     return random.randint(100, 100000) * 0.01
+
+
+def random_number():
+    """
+    随机数量
+    """
+    return random.randint(1, 1000)

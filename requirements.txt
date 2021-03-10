@@ -2,3 +2,5 @@ pytest==6.2.2
 requests==2.25.1
 
 PyYAML~=5.4.1
+allure-pytest==2.8.36
+openpyxl==3.0.6

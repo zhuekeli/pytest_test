@@ -23,3 +23,9 @@ pipreqs ./ --encoding=utf-8 --force
 ```shell
 pip install -r requirements.txt
 ```
+
+## 目录说明
+
+src/case 是测试 case 目录
+src/common 工具包
+src/api 服务的接口封装
