@@ -13,6 +13,8 @@ test_case_path = os.path.join(proDir, "src/case")
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
+    if not os.path.exists('logs'):
+        os.mkdir('logs')
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                         datefmt='%m-%d %H:%M',
