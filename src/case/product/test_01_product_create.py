@@ -18,13 +18,15 @@ class TestProductCreate(object):
     """
     商品创建 suite
     """
-    def setup(self) -> None:
-        self.config = ReadConfig()
-        self.json = OperationJson(file_name)
+
+    @classmethod
+    def setup(cls) -> None:
+        cls.config = ReadConfig()
+        cls.json = OperationJson(file_name)
         logger.info("------------------测试开始-----------------")
 
-    @pytest.fixture(scope='class')
-    def teardown(self) -> None:
+    @classmethod
+    def teardown(cls) -> None:
         logger.info("------------------测试结束-----------------")
 
     def test_01_create_product_without_inventory(self) -> None:
@@ -44,7 +46,7 @@ class TestProductCreate(object):
         resp = product.product_create(store_id, product_data)
 
         # 验证
-        self.assertEqual(resp['code'], 200, resp['message'])
+        assert resp['code'] == 200, resp['message']
 
     def test_01_create_product_with_inventory(self) -> None:
         """

@@ -16,14 +16,14 @@ load_config = ReadConfig()
 
 class TestProductSearch(object):
 
-    @pytest.fixture(scope='class')
-    def setup(self) -> None:
-        self.config = ReadConfig()
-        self.json = OperationJson(file_name)
+    @classmethod
+    def setup(cls) -> None:
+        cls.config = ReadConfig()
+        cls.json = OperationJson(file_name)
         logger.info("------------------测试开始-----------------")
 
-    @pytest.fixture(scope='class')
-    def teardown(self) -> None:
+    @classmethod
+    def teardown(cls) -> None:
         logger.info("------------------测试结束-----------------")
 
     def test_01_search_product_with_scan_code(self) -> None:

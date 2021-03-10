@@ -17,15 +17,6 @@ local_readConfig = ReadConfig()
 logger = logging.getLogger(__name__)
 
 
-def get_new_report():
-    """获取最新的测试报告"""
-    lists = os.listdir(report_path)
-    if lists:
-        lists.sort(key=lambda fn: os.path.getmtime(report_path + '/' + fn))
-        file_new = os.path.join(report_path, lists[-1])
-        return file_new
-
-
 class SendEmail:
     def __init__(self):
         global host, user, password, sender, title
@@ -42,21 +33,13 @@ class SendEmail:
     def send_email(self):
         """把最新的测试报告以邮件的方式发送"""
         # 构造邮件
-        file_new = get_new_report()
-        f = open(file_new, 'rb')
-        content = f.read()
+        content = "<a>http://{}:{}</a>".format(local_readConfig.get_value('BASE', 'test_service_host'),
+                                               local_readConfig.get_value('BASE', 'test_service_port'))
         message = MIMEMultipart()
         message['From'] = "{}".format(sender)  # 发件人
         message['To'] = ",".join(self.receive_user_list)  # 收件人
         message['Subject'] = Header(title, 'utf-8')  # 标题
         message.attach(MIMEText(content, 'html', 'utf-8'))
-
-        # 添加附件
-        filename = file_new[-31:]
-        att = MIMEText(content, 'base64', 'utf-8')
-        att["Content-Type"] = 'application/octet-stream'
-        att["Content-Disposition"] = 'attachment; filename=%s' % filename
-        message.attach(att)
 
         # 发送邮件
         try:
@@ -73,4 +56,4 @@ class SendEmail:
 
 if __name__ == "__main__":
     s = SendEmail()
-    get_new_report()
+    s.send_email("搜索测试")

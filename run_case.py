@@ -6,6 +6,7 @@ import os
 import pytest
 
 from src.common import global_variable
+from src.common.send_email import SendEmail
 
 proDir = os.path.split(os.path.realpath(__file__))[0]
 test_case_path = os.path.join(proDir, "src/case")
@@ -19,4 +20,6 @@ if __name__ == "__main__":
                         filemode='w')
     global_variable.init()
     pytest.main(['-s', '-q', '--alluredir', './report', '--clean-alluredir', 'src'])
-    os.system('allure serve report')
+    SendEmail().send_email()
+
+    os.system('allure serve -p 9091 report')

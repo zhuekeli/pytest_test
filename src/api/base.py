@@ -6,7 +6,7 @@ units = ['台', '支', '把', '套', '辆', '千克', '只', '个', '片', '件'
 
 
 def random_unit():
-    return units[random.randint(0, len(units))]
+    return units[random.randint(0, len(units) - 1)]
 
 
 def random_price():
