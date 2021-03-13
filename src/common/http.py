@@ -8,7 +8,7 @@ from src.config.readConfig import ReadConfig
 load_config = ReadConfig()
 
 
-def get(url, param):
+def get(url, param=None):
     token = global_variable.get_value('token')
     if token is None:
         token = load_config.get_token('token')

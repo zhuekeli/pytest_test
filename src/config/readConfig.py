@@ -2,8 +2,8 @@
 # coding=utf-8
 import configparser
 import os
-
-configPath = os.path.join(os.getcwd(), "resources/application.ini")
+cur_path = os.path.split(os.path.realpath(__file__))[0]
+configPath = os.path.join(cur_path, "../../resources/application.ini")
 
 
 class ReadConfig:

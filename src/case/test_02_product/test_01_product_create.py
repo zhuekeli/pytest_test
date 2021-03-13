@@ -4,7 +4,7 @@ import random
 
 import pytest
 
-from src.api import category, product, base
+from src.api import category, product, base, supplier
 from src.common.json_util import OperationJson
 from src.config.readConfig import ReadConfig
 
@@ -23,6 +23,8 @@ class TestProductCreate(object):
     def setup(cls) -> None:
         cls.config = ReadConfig()
         cls.json = OperationJson(file_name)
+        cls.store_id = load_config.get_value('BASE', 'base_store_id')
+
         logger.info("------------------测试开始-----------------")
 
     @classmethod
@@ -41,18 +43,19 @@ class TestProductCreate(object):
         product_data['unit'] = base.random_unit()
         product_data['salePrice'] = base.random_price()
 
-        store_id = load_config.get_value('BASE', 'base_store_id')
         # 调用接口
-        resp = product.product_create(store_id, product_data)
+        resp = product.product_create(self.store_id, product_data)
 
         # 验证
         assert resp['code'] == 200, resp['message']
+        # TODO 验证商品其他信息，例如库存。 通过查询数据库的方式验证数字是否正确
 
     def test_01_create_product_with_inventory(self) -> None:
         """
         创建自建商品
         带有库存
         """
+
         logger.info("test_01_create_product_with_inventory")
         # 组织数据
         product_data = self.json.get_data('create_product_with_inventory')
@@ -62,14 +65,14 @@ class TestProductCreate(object):
         product_data['salePrice'] = base.random_price()
         product_data['purchasePrice'] = base.random_price()
         product_data['inventoryQuantity'] = base.random_number()  # 库存数量
-        product_data['supplierId'] = 1
+        product_data['supplierId'] = supplier.random_supplier(self.store_id)['supplierId']
 
-        store_id = load_config.get_value('BASE', 'base_store_id')
         # 调用接口
-        resp = product.product_create(store_id, product_data)
+        resp = product.product_create(self.store_id, product_data)
 
         # 验证
         assert resp['code'] == 200, resp['message']
+        # TODO 验证商品其他信息，例如库存。 通过查询数据库的方式验证数字是否正确
 
 
 if __name__ == "__main__":
