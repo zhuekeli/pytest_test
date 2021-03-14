@@ -9,28 +9,29 @@ load_config = ReadConfig()
 
 
 def get(url, param=None):
-    token = global_variable.get_value('token')
-    if token is None:
-        token = load_config.get_token('token')
-    headers = {
-        "Authorization": token,
-        "x-store-id": load_config.get_token('base_store_id'),
-        "x-user-id": str(global_variable.get_value('user_id') or 0)
-    }
+    headers = get_global_header()
 
     req = requests.get(url, params=param, headers=headers)
     return json.loads(req.text)
 
 
-def post(url, body):
-    token = global_variable.get_value("token")
-    if token is None:
-        token = load_config.get_token('token')
-    headers = {
-        "Authorization": token,
-        "x-store-id": load_config.get_token('base_store_id'),
-        "x-user-id": str(global_variable.get_value('user_id') or 0)
-    }
+def post(url, body=None):
+    headers = get_global_header()
 
     req = requests.post(url, json=body, headers=headers)
     return json.loads(req.text)
+
+
+def delete(url, body=None):
+    headers = get_global_header()
+    req = requests.delete(url, json=body, headers=headers)
+    return json.loads(req.text)
+
+
+def get_global_header():
+    headers = {
+        "Authorization": global_variable.get_token(),
+        "x-store-id": global_variable.get_store_id(),
+        "x-user-id": str(global_variable.get_user_id())
+    }
+    return headers

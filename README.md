@@ -47,3 +47,16 @@ pip install -r requirements.txt
 3. 按照文件顺序，执行模块下以 test 开头的py 文件
 4. 按照子模块的顺序，挨个执行子模块
 5. 只会执行以 test、Test 等开头的文件、类、方法
+
+## pytest 用法简介
+
+1. pytest 会递归的遍历并执行以 test 开头或结尾的文件、类、方法
+2. `@pytest.mark.skip(reason='out-of-date api')` 可以跳过测试
+3. `@pytest.mark.skipif(conn.__version__ < '0.2.0', reason='not supported until v0.2.0')`，按照指定条件跳过
+4. `pytest.mark.parametrize(argnames, argvalues)` 可以参数化测试，每组参数都是独立的一次测试，详细示例见 example/pytest/pytest_mark_parametrize
+5. `@pytest.fixture()`，表示固件，用于 pytest 在执行测试函数之前后之后加载他们
+6. 作用域是为了更精细化控制固件
+    * `function` : 函数级，每个测试函数都会执行一次固件；
+    * `class` : 类级别，每个测试类执行一次，所有方法都可以使用；
+    * `module` : 模块级，每个模块执行一次，模块内函数和方法都可使用；
+    * `session` : 会话级，一次测试只执行一次，所有被找到的函数和方法都可用。

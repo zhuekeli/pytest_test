@@ -2,6 +2,7 @@
 # coding=utf-8
 import configparser
 import os
+
 cur_path = os.path.split(os.path.realpath(__file__))[0]
 configPath = os.path.join(cur_path, "../../resources/application.ini")
 
@@ -18,9 +19,9 @@ class ReadConfig:
         token_id = self.cf.get("BASE", name)
         return token_id
 
-    def write_token(self, token_key, token):
-        self.cf.set("BASE", token_key, token)
-        config = open(configPath, 'w',  encoding='UTF-8')
+    def set_value(self, section, key, value):
+        self.cf.set(section, key, value)
+        config = open(configPath, 'w', encoding='UTF-8')
         with config as conf:
             self.cf.write(conf)
         config.close()

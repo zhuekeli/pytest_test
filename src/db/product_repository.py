@@ -1,6 +1,6 @@
-from src.common.db import DbUtil
+from src.common.db_util import DbUtil
 
-db = DbUtil()
+db = DbUtil('skoyi_store_jinyong')
 
 
 def get_product_scan_code(store_id):

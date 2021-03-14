@@ -5,6 +5,7 @@ import random
 import pytest
 
 from src.api import category, product, base
+from src.common import global_variable
 from src.common.json_util import OperationJson
 from src.config.readConfig import ReadConfig
 
@@ -20,12 +21,14 @@ class TestProductSearch(object):
     def setup(cls) -> None:
         cls.config = ReadConfig()
         cls.json = OperationJson(file_name)
-        logger.info("------------------测试开始-----------------")
+        cls.store_id = global_variable.get_store_id()
+        logger.info("------------------TestProductSearch 测试开始-----------------")
 
     @classmethod
     def teardown(cls) -> None:
-        logger.info("------------------测试结束-----------------")
+        logger.info("------------------TestProductSearch 测试结束-----------------")
 
+    @pytest.mark.skip(reason='not work')
     def test_01_search_product_with_scan_code(self) -> None:
         """
         使用商品识别码搜索商品
@@ -39,9 +42,8 @@ class TestProductSearch(object):
         product_data['unit'] = base.random_unit()
         product_data['salePrice'] = base.random_price()
 
-        store_id = load_config.get_value('BASE', 'base_store_id')
         # 调用接口
-        resp = product.product_create(store_id, product_data)
+        resp = product.product_create(self.store_id, product_data)
 
         # 验证
         assert resp['code'] == 200, resp['message']

@@ -4,6 +4,7 @@ import os
 import pytest
 
 from src.api import supplier
+from src.common import global_variable
 from src.common.json_util import OperationJson
 from src.config.readConfig import ReadConfig
 
@@ -23,7 +24,7 @@ class TestProductCreate(object):
     def setup(cls) -> None:
         cls.config = ReadConfig()
         cls.json = OperationJson(file_name)
-        cls.store_id = load_config.get_value('BASE', 'base_store_id')
+        cls.store_id = global_variable.get_store_id()
 
         logger.info("------------------测试开始-----------------")
 
