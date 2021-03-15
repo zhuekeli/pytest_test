@@ -1,8 +1,6 @@
 import logging
 import os
 
-import pytest
-
 from src.api import supplier
 from src.common import global_variable
 from src.common.json_util import OperationJson
@@ -46,4 +44,4 @@ class TestProductCreate(object):
 
 
 if __name__ == "__main__":
-    pytest.main()
+    TestProductCreate().test_01_create_supplier()

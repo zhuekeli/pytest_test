@@ -2,6 +2,7 @@ import logging
 import os
 import random
 
+import allure
 import pytest
 
 from src.api import category, product, base
@@ -15,6 +16,8 @@ logger = logging.getLogger(__name__)
 load_config = ReadConfig()
 
 
+@allure.parent_suite('商品测试')
+@allure.suite('商品搜索测试')
 class TestProductSearch(object):
 
     @classmethod
@@ -47,14 +50,6 @@ class TestProductSearch(object):
 
         # 验证
         assert resp['code'] == 200, resp['message']
-
-    def test_01_create_product_with_inventory(self) -> None:
-        """
-        创建自建商品
-        带有库存
-        """
-        logger.info("test_01_create_product_with_inventory")
-        # 组织数据
 
 
 if __name__ == "__main__":

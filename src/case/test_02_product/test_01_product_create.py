@@ -2,6 +2,7 @@ import logging
 import os
 import random
 
+import allure
 import pytest
 
 from src.api import category, product, base, supplier
@@ -16,6 +17,8 @@ logger = logging.getLogger(__name__)
 load_config = ReadConfig()
 
 
+@allure.parent_suite('商品测试')
+@allure.suite('商品创建测试')
 class TestProductCreate(object):
     """
     商品创建 suite
@@ -33,6 +36,7 @@ class TestProductCreate(object):
     def teardown(cls) -> None:
         logger.info("------------------测试结束-----------------")
 
+    @allure.title('创建无库存的自建商品')
     def test_01_create_product_without_inventory(self) -> None:
         """
         创建自建商品,没有库存
@@ -57,6 +61,7 @@ class TestProductCreate(object):
         store_category_list = product_repository.get_store_category(self.store_id)
         assert category_id in store_category_list, '店铺未关联上分类'
 
+    @allure.title('创建带有库存的自建商品')
     def test_01_create_product_with_inventory(self) -> None:
         """
         创建自建商品

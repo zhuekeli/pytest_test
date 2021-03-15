@@ -3,10 +3,7 @@ from src.config.readConfig import ReadConfig
 
 load_config = ReadConfig()
 
-
-def init():  # 初始化
-    global _global_dict
-    _global_dict = {}
+_global_dict = {}
 
 
 def _set_value(key, value):

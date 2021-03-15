@@ -4,6 +4,7 @@
 """
 import logging
 
+import allure
 import requests
 
 from src.common import allure_title, allure_step
@@ -22,12 +23,12 @@ class BaseRequest(object):
         return cls.session
 
     @classmethod
-    def send_request(self, case: dict):
+    def send_request(cls, case: dict):
         """处理case数据，转换成可用数据发送请求
         :param case: 读取出来的每一行用例内容，可进行解包
         return: 响应结果， 预期结果
         """
-        self._rep_expr_case_data(case)
+        cls._rep_expr_case_data(case)
 
         logger.info(
             f"用例进行处理前数据: \n "
@@ -35,14 +36,15 @@ class BaseRequest(object):
             f"请求参数: {case['case_request_data']}  \n "
             f"预期结果: {case['case_expect']}")
         # allure报告 用例标题
-        allure_title(case['case_title'])
+        allure_title(case['case_code'])
+        allure.dynamic.description(case['case_title'])
         # 处理url、header、data、file、的前置方法
         url = DataProcess.handle_path(case['case_path'])
         allure_step('请求地址', url)
         data = DataProcess.handle_data(case['case_request_data'])
         allure_step('请求参数', data)
         # 发送请求
-        res = self.send_api(url, case['case_method'], case['case_request_type'], None, data)
+        res = cls.send_api(url, case['case_method'], case['case_request_type'], None, data)
         allure_step('响应耗时(s)', res.elapsed.total_seconds())
         allure_step('响应内容', res.json())
         # 响应后操作

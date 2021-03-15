@@ -1,0 +1,36 @@
+- name: 登录测试组
+  cases:
+    - case_title: 验证是否可正确获取区域信息
+      case_code: case_004
+      case_path: https://rbox.ruigushop.com/metadata/system/address/provinces/cities/regions
+      case_process: Y
+      case_method: GET
+      case_request_type: params
+      case_request_data: ''
+      case_expect: '{"$.code": 200}'
+    - case_title: 验证是否可正确获取区域信息11
+      case_code: case_003
+      case_path: https://rbox.ruigushop.com/metadata/system/address/provinces/cities/regions
+      case_process: Y
+      case_method: GET
+      case_request_type: params
+      case_request_data: ''
+      case_expect: '{"$.code": 200}'
+- name: 登录测试组1
+  cases:
+    - case_title: test_ss
+      case_code: case_0041
+      case_path: https://rbox.ruigushop.com/metadata/system/address/provinces/cities/regions
+      case_process: Y
+      case_method: GET
+      case_request_type: params
+      case_request_data: ''
+      case_expect: '{"$.code": 200}'
+    - case_title: test02002
+      case_code: case_0031
+      case_path: https://rbox.ruigushop.com/metadata/system/address/provinces/cities/regions
+      case_process: Y
+      case_method: GET
+      case_request_type: params
+      case_request_data: ''
+      case_expect: '{"$.code": 200}'

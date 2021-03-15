@@ -8,8 +8,6 @@ import pytest
 from src.common import global_variable
 from src.common.send_email import SendEmail
 
-proDir = os.path.split(os.path.realpath(__file__))[0]
-test_case_path = os.path.join(proDir, "src/case")
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
@@ -21,7 +19,7 @@ if __name__ == "__main__":
                         filename='logs/skoyi_store.log',
                         filemode='w')
     global_variable.init()
-    pytest.main(['-s', '-q', '--alluredir', './report', '--clean-alluredir', 'src'])
+    pytest.main(['-s', '-q', '--alluredir', './report', '--clean-alluredir'])
     SendEmail().send_email()
 
     os.system('allure serve -p 9091 report')
