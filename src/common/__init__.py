@@ -73,7 +73,7 @@ def allure_title(title: str) -> None:
     allure.dynamic.title(title)
 
 
-def allure_step(step: str, var: str) -> None:
+def allure_step(step: str, var: object) -> None:
     """
     :param step: 步骤及附件名称
     :param var: 附件内容

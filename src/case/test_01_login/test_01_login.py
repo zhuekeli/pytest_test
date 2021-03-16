@@ -1,19 +1,27 @@
 import logging
 
+import allure
+
 from src.api import user
-from src.common import global_variable
-from src.config.readConfig import ReadConfig
+from src.common import global_variable, allure_step
+from src.config.application_config import ApplicationConfig
 from src.db.store_repository import StoreRepository
 
 logger = logging.getLogger(__name__)
 
 
+@allure.parent_suite('登录测试')
+@allure.suite('登录测试')
 class TestLogin(object):
 
     @classmethod
     def setup(cls) -> None:
-        cls.config = ReadConfig()
+        cls.config = ApplicationConfig()
+        cls.mobile = cls.config.get_value('BASE', 'mobile')
+        cls.password = cls.config.get_value('BASE', 'password')
+        cls.gv = global_variable
         cls.store_repository = StoreRepository()
+
         logger.info("------------------TestLogin 测试开始-----------------")
 
     @classmethod
@@ -27,10 +35,10 @@ class TestLogin(object):
         """
 
         logger.info("test_01_login_init_user ..........")
-        response = user.login({
-            "mobile": self.config.get_value("BASE", "mobile"),
-            "password": self.config.get_value("BASE", "password")
-        })
+        data = {"mobile": self.mobile, "password": self.password}
+
+        allure_step('登录账户', data)
+        response = user.login(data)
         # 验证是否登录成功
         assert response['result'], response['message']
 
@@ -38,10 +46,11 @@ class TestLogin(object):
         user_info = self.store_repository.get_user_by_id(user_id)
         assert user_info is not None, '用户信息不存在'
 
+        allure_step('初始化的用户信息', response['data'])
         # 初始化用户的 id 和 token
         token = response['data']['token']
-        global_variable.set_user_id(user_id)
-        global_variable.set_token(token)
+        self.gv.set_user_id(user_id)
+        self.gv.set_token(token)
 
     def test_02_login_init_store(self):
         """
@@ -50,7 +59,14 @@ class TestLogin(object):
         """
         logger.info("test_02_login_init_store ..........")
         # 获取老板的店铺信息，可以触发初始化操作
+        user_id = self.gv.get_user_id()
+        allure_step('获取老板的店铺信息-初始化店铺', user_id)
+        resp = user.get_store_by_user(user_id)
 
-        stores = user.get_store_by_user(global_variable.get_user_id())
+        assert resp['result'] and len(resp['data']) >= 1, resp['message']
+        allure_step('验证店铺是否初始化成功', resp['data'])
 
-        assert len(stores) >= 1, '未获取的老板的店铺信息'
+        store = resp['data'][0]
+        store_db = self.store_repository.get_store_by_mobile(self.mobile)
+
+        assert store['id'] == store_db['store_id'], '店铺信息错误'

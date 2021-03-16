@@ -8,12 +8,9 @@ import pytest
 from src.api import category, product, base
 from src.common import global_variable
 from src.common.json_util import OperationJson
-from src.config.readConfig import ReadConfig
-
-file_name = os.path.join(os.getcwd(), 'resources/product/product_create.json')
+from src.config.application_config import ApplicationConfig
 
 logger = logging.getLogger(__name__)
-load_config = ReadConfig()
 
 
 @allure.parent_suite('商品测试')
@@ -22,7 +19,10 @@ class TestProductSearch(object):
 
     @classmethod
     def setup(cls) -> None:
-        cls.config = ReadConfig()
+        cur_path = os.path.split(os.path.realpath(__file__))[0]
+        file_name = os.path.join(cur_path, "../../../resources/product/product_create.json")
+
+        cls.config = ApplicationConfig()
         cls.json = OperationJson(file_name)
         cls.store_id = global_variable.get_store_id()
         logger.info("------------------TestProductSearch 测试开始-----------------")

@@ -2,9 +2,9 @@ import json
 
 import requests
 
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+load_config = ApplicationConfig()
 
 
 def login_store(store_id, customer_id):

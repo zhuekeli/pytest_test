@@ -1,10 +1,10 @@
-from src.common.db_util import DbUtil
+from src.common.sql_template import SqlTemplate
 
 
 class StoreRepository(object):
 
     def __init__(self):
-        self.user_db = DbUtil('obm_user')
+        self.user_db = SqlTemplate('obm_user')
 
     def clear_employer(self, store_id) -> None:
         """

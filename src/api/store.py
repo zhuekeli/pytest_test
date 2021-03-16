@@ -1,7 +1,7 @@
 from src.common import http
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-config = ReadConfig()
+config = ApplicationConfig()
 
 
 def clear_all_cache() -> None:

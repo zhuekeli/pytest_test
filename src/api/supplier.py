@@ -1,9 +1,9 @@
 import random
 
 from src.common import http
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+config = ApplicationConfig()
 
 
 def random_supplier(store_id):
@@ -11,7 +11,7 @@ def random_supplier(store_id):
     随机供应商
     :return:
     """
-    url = '{}/store/{}/supplier/supplier-brief'.format(load_config.get_value('API', 'store_url'), store_id)
+    url = '{}/store/{}/supplier/supplier-brief'.format(config.get_value('API', 'store_url'), store_id)
 
     resp = http.get(url)
     if resp['result']:
@@ -25,7 +25,7 @@ def create_supplier(store_id, data):
     :param store_id: 店铺 id
     :return:
     """
-    url = '{}/store/{}/supplier'.format(load_config.get_value('API', 'store_url'), store_id)
+    url = '{}/store/{}/supplier'.format(config.get_value('API', 'store_url'), store_id)
     return http.post(url, data)
 
 

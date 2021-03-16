@@ -3,9 +3,9 @@ import json
 import requests
 
 from src.common import global_variable
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+config = ApplicationConfig()
 
 
 def get(url, param=None):

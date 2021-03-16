@@ -5,7 +5,6 @@ import os
 
 import pytest
 
-from src.common import global_variable
 from src.common.send_email import SendEmail
 
 logger = logging.getLogger(__name__)
@@ -18,7 +17,6 @@ if __name__ == "__main__":
                         datefmt='%m-%d %H:%M',
                         filename='logs/skoyi_store.log',
                         filemode='w')
-    global_variable.init()
     pytest.main(['-s', '-q', '--alluredir', './report', '--clean-alluredir'])
     SendEmail().send_email()
 

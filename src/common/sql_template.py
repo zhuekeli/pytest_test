@@ -2,7 +2,7 @@ import logging
 
 import pymysql
 
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
 """
 mysql 工具类
@@ -10,18 +10,18 @@ mysql 工具类
 """
 
 logger = logging.getLogger(__name__)
-load_config = ReadConfig()
 
 
-class DbUtil(object):
+class SqlTemplate(object):
     """mysql util"""
 
     def __init__(self, database: str):
-        self.host = load_config.get_value('DB', 'host')
-        self.port = int(load_config.get_value('DB', 'port'))
+        self.config = ApplicationConfig()
+        self.host = self.config.get_value('DB', 'host')
+        self.port = int(self.config.get_value('DB', 'port'))
         self.database = database
-        self.password = load_config.get_value('DB', 'password')
-        self.username = load_config.get_value('DB', 'username')
+        self.password = self.config.get_value('DB', 'password')
+        self.username = self.config.get_value('DB', 'username')
         self.charsets = 'utf8mb4'
         self.db = None
         self.cursor = None
@@ -114,7 +114,7 @@ class DbUtil(object):
 
 
 if __name__ == '__main__':
-    user_db = DbUtil('obm_user')
+    user_db = SqlTemplate('obm_user')
     sql1 = 'select * from user_info'
     print(user_db.get_all(sql1))
 

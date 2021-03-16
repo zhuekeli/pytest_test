@@ -1,9 +1,9 @@
 import random
 
 from src.common import http, global_variable
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+load_config = ApplicationConfig()
 
 
 def choice_random_second_category():

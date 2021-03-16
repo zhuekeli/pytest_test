@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from src.common import http
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+load_config = ApplicationConfig()
 
 
 def created_order(store_id, data):

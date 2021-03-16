@@ -7,7 +7,7 @@ cur_path = os.path.split(os.path.realpath(__file__))[0]
 configPath = os.path.join(cur_path, "../../resources/application.ini")
 
 
-class ReadConfig:
+class ApplicationConfig:
     def __init__(self):
         self.cf = configparser.ConfigParser()
         self.cf.read(configPath, encoding='UTF-8')
@@ -28,6 +28,6 @@ class ReadConfig:
 
 
 if __name__ == "__main__":
-    r = ReadConfig()
+    r = ApplicationConfig()
     s = r.get_value("API", "base_url")
     print(s)

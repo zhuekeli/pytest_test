@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+config = ApplicationConfig()
 
 _global_dict = {}
 
@@ -22,15 +22,15 @@ def _get_value(key, def_value=None):
 
 
 def get_token():
-    return _get_value('token', load_config.get_value('BASE', 'token'))
+    return _get_value('token', config.get_value('BASE', 'token'))
 
 
 def get_user_id():
-    return _get_value('user_id', load_config.get_value('BASE', 'base_user_id'))
+    return _get_value('user_id', config.get_value('BASE', 'base_user_id'))
 
 
 def get_store_id():
-    return _get_value('store_id', load_config.get_value('BASE', 'base_store_id'))
+    return _get_value('store_id', config.get_value('BASE', 'base_store_id'))
 
 
 def set_token(token):

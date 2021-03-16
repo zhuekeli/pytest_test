@@ -32,24 +32,24 @@ class BaseRequest(object):
 
         logger.info(
             f"用例进行处理前数据: \n "
-            f"接口路径: {case['case_path']} \n "
-            f"请求参数: {case['case_request_data']}  \n "
-            f"预期结果: {case['case_expect']}")
+            f"接口路径: {case['path']} \n "
+            f"请求参数: {case['request_data']}  \n "
+            f"预期结果: {case['expect']}")
         # allure报告 用例标题
-        allure_title(case['case_code'])
-        allure.dynamic.description(case['case_title'])
+        allure_title(case['code'])
+        allure.dynamic.description(case['title'])
         # 处理url、header、data、file、的前置方法
-        url = DataProcess.handle_path(case['case_path'])
+        url = DataProcess.handle_path(case['path'])
         allure_step('请求地址', url)
-        data = DataProcess.handle_data(case['case_request_data'])
+        data = DataProcess.handle_data(case['request_data'])
         allure_step('请求参数', data)
         # 发送请求
-        res = cls.send_api(url, case['case_method'], case['case_request_type'], None, data)
+        res = cls.send_api(url, case['method'], case['request_type'], None, data)
         allure_step('响应耗时(s)', res.elapsed.total_seconds())
         allure_step('响应内容', res.json())
         # 响应后操作
-        DataProcess.save_response(case['case_code'], res.json())
-        return res.json(), case['case_expect'], None
+        DataProcess.save_response(case['code'], res.json())
+        return res.json(), case['expect'], None
 
     @classmethod
     def send_api(cls, url, method, request_type, header=None, data=None, file=None) -> object:

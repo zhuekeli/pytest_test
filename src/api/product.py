@@ -1,7 +1,7 @@
 from src.common import http
-from src.config.readConfig import ReadConfig
+from src.config.application_config import ApplicationConfig
 
-load_config = ReadConfig()
+load_config = ApplicationConfig()
 
 
 def product_create(store_id, data):
