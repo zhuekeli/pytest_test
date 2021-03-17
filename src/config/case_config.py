@@ -3,7 +3,7 @@ import os
 import yaml
 
 
-def read_case_data():
+def read_case_data() -> list:
     """加载case 测试数据"""
     cur_path = os.path.split(os.path.realpath(__file__))[0]
     file_name = os.path.join(cur_path, "../../resources/test_case_data.yaml")

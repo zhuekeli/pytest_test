@@ -15,5 +15,11 @@ def get_store_by_user(user_id):
     return http.get(url)
 
 
+def get_user_token(user_id):
+    # 获取 token
+    token_url = f'{load_config.get_value("API", "user_url")}/dev/token?userId={user_id}'
+    return http.post(token_url)
+
+
 if __name__ == '__main__':
-    login({"mobile": "14000000010", "password": "123456"})
+    print(get_user_token(4))

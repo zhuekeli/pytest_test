@@ -8,3 +8,11 @@
       request_type: params
       request_data: ''
       expect: '{"$.code": 200}'
+    - title: 验证是否可正确获取区域信息111
+      code: case_005
+      path: https://rbox.ruigushop.com/metadata/system/address/provinces/cities/regions
+      process: Y
+      method: GET
+      request_type: params
+      request_data: ''
+      expect: '{"$.code": 200}'
