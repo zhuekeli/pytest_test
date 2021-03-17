@@ -24,7 +24,7 @@ class ProductRepository(object):
         """
         sql = "select quantity from store_inventory_product where store_id = %s and prod_code = %s"
         data = self.store_db.get_one(sql, [store_id, prod_code])
-        return data[0]
+        return data['quantity']
 
     def get_store_category(self, store_id):
         """
@@ -36,11 +36,11 @@ class ProductRepository(object):
         data = self.store_db.get_all(sql, [store_id])
         category_list = []
         for category_id in data:
-            category_list.append(category_id[0])
+            category_list.append(category_id['category_id'])
         return category_list
 
 
 if __name__ == '__main__':
     ProductRepository().get_product_scan_code(1)
     print(ProductRepository().get_product_inventory_quantity(2, '000002-00018'))
-    ProductRepository().get_store_category(2)
+    print(ProductRepository().get_store_category(2))
