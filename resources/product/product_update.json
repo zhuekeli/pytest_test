@@ -1,0 +1,13 @@
+{
+  "update_store_product": {
+    "brandName": "品牌名称啊",
+    "enabled": 1,
+    "image": [],
+    "name": "测试商品名称-",
+    "negotiationPrice": 0
+  },
+  "update_ruigu_product": {
+    "displayName": "测试商品名称-",
+    "negotiationPrice": 0
+  }
+}

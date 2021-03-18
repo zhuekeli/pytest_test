@@ -22,6 +22,13 @@ def post(url, body=None):
     return json.loads(req.text)
 
 
+def put(url, body=None):
+    headers = get_global_header()
+
+    req = requests.put(url, json=body, headers=headers)
+    return json.loads(req.text)
+
+
 def delete(url, body=None):
     headers = get_global_header()
     req = requests.delete(url, json=body, headers=headers)

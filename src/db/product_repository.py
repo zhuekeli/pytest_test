@@ -39,8 +39,20 @@ class ProductRepository(object):
             category_list.append(category_id['category_id'])
         return category_list
 
+    def get_store_product(self, store_id, prod_code):
+        """
+        根据店铺ID和商品code查询店铺中的商品
+        :param store_id:
+        :param prod_code:
+        :return:
+        """
+        sql = "select * from store_product where store_id = %s and prod_code = %s"
+        data = self.store_db.get_one(sql, [store_id, prod_code])
+        return data
+
 
 if __name__ == '__main__':
     ProductRepository().get_product_scan_code(1)
     print(ProductRepository().get_product_inventory_quantity(2, '000002-00018'))
     print(ProductRepository().get_store_category(2))
+    print(ProductRepository().get_store_product(1, "000001-00229"))
