@@ -50,6 +50,19 @@ def get_random_product_from_store(store_id):
     return product_list[random.randint(0, len(product_list) - 1)]
 
 
+def get_random_inventory_product_from_store(store_id, inventory_status):
+    """
+    获取 有库存商品
+    :param store_id:
+    :param inventory_status
+    :return:
+    """
+    url = '{0}/store/{1}/search-product?inventoryStatus={2}&page=0&size=200'.format(
+        load_config.get_value('API', 'store_url'), store_id, inventory_status)
+    product_list = http.get(url)['data']['products']['content']
+    return product_list[random.randint(0, len(product_list) - 1)] if len(product_list) > 0 else []
+
+
 def get_random_store_product_from_store(store_id):
     """
     TODO

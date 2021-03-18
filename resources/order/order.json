@@ -1,0 +1,25 @@
+{
+  "create_order": {
+    "totalPaidAmount": 0.0,
+    "remark": "",
+    "consignee": "py联系人",
+    "consigneePhone": "13912345678",
+    "consigneeAddress": "py地址",
+    "items": [
+      {
+        "prodName": "py商品-",
+        "prodCode": "",
+        "price": 0.0,
+        "unit": "",
+        "quantity": 0,
+        "giftQuantity": 0
+      }
+    ],
+    "orderSource": 2,
+    "couponId": 0,
+    "discountAmount": 10,
+    "memberType": 0,
+    "memberDiscountAmount": 0.0,
+    "paidType": 0
+  }
+}
