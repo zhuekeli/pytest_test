@@ -13,6 +13,9 @@ from src.config.application_config import ApplicationConfig
 logger = logging.getLogger(__name__)
 
 
+# 根据条码搜索，根据品牌分类搜索，根据关键字搜索
+
+
 @allure.parent_suite('商品测试')
 @allure.suite('商品搜索测试')
 class TestProductSearch(object):
