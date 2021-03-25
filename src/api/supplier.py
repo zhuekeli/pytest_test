@@ -29,5 +29,17 @@ def create_supplier(store_id, data):
     return http.post(url, data)
 
 
+def update_supplier(store_id, supplier_id, data):
+    """
+    编辑供应商
+    :param store_id: 店铺id
+    :param supplier_id: 供应商id
+    :param data: 供应商编辑信息
+    :return:
+    """
+    url = '{}/store/{}/supplier/{}'.format(config.get_value('API', 'store_url'), store_id, supplier_id)
+    return http.put(url, data)
+
+
 if __name__ == '__main__':
     random_supplier(1)
