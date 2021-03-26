@@ -1,0 +1,20 @@
+{
+  "totalPaidAmount": 0.0,
+  "remark": "备注",
+  "consignee": "联系人",
+  "consigneePhone": "13912345678",
+  "consigneeAddress": "地址",
+  "items": [
+    {
+      "prodName": "锤子",
+      "prodCode": "000001-00001",
+      "prodImage": "图片",
+      "price": 10.00,
+      "unit": "只",
+      "quantity": 2,
+      "giftQuantity": 0,
+      "negotiationPrice": 0
+    }
+  ],
+  "customerId": "1"
+}
