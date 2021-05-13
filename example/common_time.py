@@ -8,9 +8,11 @@ Created on Mon Nov 16 18:09:29 2020
 import datetime
 import time
 
+"""
+时间 -> 时间戳
+param 入参为空，返回当前时间的时间戳，否则返回指定时间的时间戳
+"""
 
-# 时间 -> 时间戳
-# param 入参为空，返回当前时间的时间戳，否则返回指定时间的时间戳
 def get_timestamp(param=None):
     if param is None:
         return int(time.time())
